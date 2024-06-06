@@ -1,0 +1,769 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>DOCUMENTACIÓN</title><nav><a href="./index.html">Volver</a></nav><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+	
+</style></head><body><article id="f3f8f32b-a72c-4194-9395-d89abe5c3dbd" class="page sans"><header><h1 class="page-title">DOCUMENTACIÓN</h1><p class="page-description"></p></header><div class="page-body"><h2 id="5ff373b7-f0af-4408-977b-bc55fb7151cf" class="">ASIGNATURA: Aplicaciones Web II</h2><h2 id="21635e48-a71e-43b0-8fb4-95650a0c0b47" class="">TP 2: API-REST</h2><p id="8b0bb7fb-14d3-43d5-933a-c5d8e4cd14aa" class="">
+</p><p id="410e4b0a-463f-4bbc-819e-677a00e5d0ed" class="">
+</p><h1 id="7d8f7cac-1a87-4a68-a367-cb02028023a7" class="">OBTENER PRODUCTOS</h1><p id="2f88fb7e-d379-4b9b-8725-e5b6030274f7" class="">Método: GET<br/>Obtiene un recurso, en este caso todos los productos de ‘productos.json’.<br/>Ruta: localhost:3000/v1/productos<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bde2e022-88f9-4ca1-b117-674628a17405" class="code"><code class="language-JSON">{
+    &quot;productos&quot;: [
+        {
+            &quot;id&quot;: &quot;1&quot;,
+            &quot;nombre&quot;: &quot;Smartphone Galaxy S24+&quot;,
+            &quot;marca&quot;: &quot;Samsung&quot;,
+            &quot;categoria&quot;: &quot;Smartphone&quot;,
+            &quot;stock&quot;: &quot;50&quot;
+        },
+        {
+            &quot;id&quot;: &quot;2&quot;,
+            &quot;nombre&quot;: &quot;Laptop XPS 13&quot;,
+            &quot;marca&quot;: &quot;Dell&quot;,
+            &quot;categoria&quot;: &quot;Laptop&quot;,
+            &quot;stock&quot;: 30
+        },
+        {
+            &quot;id&quot;: &quot;3&quot;,
+            &quot;nombre&quot;: &quot;Auriculares WH-1000XM4&quot;,
+            &quot;marca&quot;: &quot;Sony&quot;,
+            &quot;categoria&quot;: &quot;Auriculares&quot;,
+            &quot;stock&quot;: 100
+        }
+    ]
+}</code></pre><p id="fce0ef3f-d001-4fc4-8026-ec7dd3476a31" class="">
+</p><p id="3740ac09-a238-4618-9e76-74f6d8b43ce1" class="">En caso de error:</p><ul id="a158f157-3082-423b-969e-30c6a5ed1c6e" class="bulleted-list"><li style="list-style-type:disc">Código 500 &quot;Internal Server Error”<ul id="b90b78cd-3952-47be-945e-0d64ffac496b" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud del cliente.</li></ul><ul id="74c608d3-5eea-420b-9a2e-8f3b84c2e571" class="bulleted-list"><li style="list-style-type:circle">Mensaje: ‘Error de servidor’</li></ul></li></ul><p id="7aadf78e-d8a1-4c91-9880-531cacaa41fa" class="">Si los datos fueron enviados: </p><ul id="e5f6e1f8-a066-4c9c-a5b8-bb80061c2592" class="bulleted-list"><li style="list-style-type:disc">Código 200 &quot;OK”<ul id="bb7fcd66-c8dc-4b4c-ad8c-e9296d94992d" class="bulleted-list"><li style="list-style-type:circle">Descripción: indica que la solicitud del cliente ha sido recibida, procesada y completada exitosamente por el servidor.</li></ul></li></ul><p id="1e784b47-c75c-4525-a079-09c12d6c10a9" class="">Si no se encuentra la ruta:</p><ul id="ac2ab3c5-d278-4def-b01b-7467529dd512" class="bulleted-list"><li style="list-style-type:disc">Código 404 &quot;Not Found”<ul id="a9e4efe4-aaf9-4582-9135-15efbb05df08" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor no puede encontrar el recurso solicitado.</li></ul><ul id="e990d179-73ef-46be-aef1-c3a54ac7e234" class="bulleted-list"><li style="list-style-type:circle">Mensaje: ‘Ruta no encontrada’</li></ul></li></ul><p id="27f245f3-4ec3-4036-92b9-de9d7198bbf9" class="">
+</p><h1 id="7e62d69d-831c-4618-9c7c-c395d1f0bf3e" class="">OBTENER PRODUCTOS POR ID</h1><p id="8f2e7715-2af5-4d07-a15a-ff7a27b3161a" class="">Método: GET<br/>Obtiene un recurso, pero en este caso solamente un producto de ‘productos.json’. <br/></p><p id="8ccc4296-69ea-4a9d-abd6-aad3def4587d" class="">Ruta: localhost:3000/v1/productos/{id}</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="eca7b10a-40d9-4968-bec6-aacc1f078438" class="code"><code class="language-JSON">{
+    &quot;productos&quot;: [
+        {
+            &quot;id&quot;: &quot;1&quot;,
+            &quot;nombre&quot;: &quot;Smartphone Galaxy S24+&quot;,
+            &quot;marca&quot;: &quot;Samsung&quot;,
+            &quot;categoria&quot;: &quot;Smartphone&quot;,
+            &quot;stock&quot;: &quot;50&quot;
+        }
+    ]
+}</code></pre><p id="4f687336-2aef-4151-a456-0f20d8edf703" class="">
+</p><p id="9cb475c5-95c8-432e-ab4f-094ab67956f7" class="">En caso de error:</p><ul id="8e0397ed-9068-4bff-8baf-e9b4e5e056ec" class="bulleted-list"><li style="list-style-type:disc">Código 500 &quot;Internal Server Error”<ul id="226e7165-7614-4a6d-8062-a3dedbea2e20" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud del cliente.</li></ul><ul id="0a9d0cc2-268a-41d4-83a1-42d1259a500f" class="bulleted-list"><li style="list-style-type:circle">Mensaje: ‘Error de servidor’</li></ul></li></ul><p id="82b08c68-dd28-4e79-b5c9-79dba4f53334" class="">Si los datos fueron enviados: </p><ul id="94caaaed-5f9d-4ba5-beaf-19f6079ec5a2" class="bulleted-list"><li style="list-style-type:disc">Código 200 &quot;OK”<ul id="37de553e-c457-4bcf-a316-2737193e1215" class="bulleted-list"><li style="list-style-type:circle">Descripción: indica que la solicitud del cliente ha sido recibida, procesada y completada exitosamente por el servidor.</li></ul></li></ul><p id="aedfd03f-82f8-45b3-9943-9e039a35a4b5" class="">Si no se encuentra la ruta:</p><ul id="3b856699-5d19-44c0-8186-5c798abeb560" class="bulleted-list"><li style="list-style-type:disc">Código 404 &quot;Not Found”<ul id="17cb2c4f-fd4c-482c-9dcf-dbfae9b313b0" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor no puede encontrar el recurso solicitado.</li></ul><ul id="e17a5b9f-02f6-4458-94ce-36c186de690f" class="bulleted-list"><li style="list-style-type:circle">Mensaje: ‘Ruta no encontrada’</li></ul></li></ul><p id="0dc66519-b7e3-46c0-b4af-a942debbe939" class="">
+</p><h1 id="7b3d0783-efa6-4012-bd0c-0e682d5587ca" class="">CREAR PRODUCTO</h1><p id="0d32c540-f2da-4b7e-ad44-8102c5363047" class="">Método: POST<br/>Crea un nuevo recurso, y lo almacena en un archivo JSON, en ‘productos.json’.<br/></p><p id="9600fbac-bdfa-4d99-bda7-cf83db884142" class="">Ruta: localhost:3000/v1/productos</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="53fe2b6a-eb7f-44eb-a994-8855b05c41a5" class="code"><code class="language-JSON">{
+    &quot;productos&quot;: [
+        {
+            &quot;nombre&quot;: &quot;Smartphone Samsung Galaxy A34&quot;,
+            &quot;marca&quot;: &quot;Samsung&quot;,
+            &quot;categoria&quot;: &quot;Smartphone&quot;,
+            &quot;stock&quot;: &quot;50&quot;
+        }
+    ]
+}
+
+// El ID se genera automáticamente y de forma enumerada. </code></pre><p id="62c7f8d9-ceda-4aa0-a42b-365c46d6a03d" class="">
+</p><p id="e019780e-b81f-47cf-b9ea-c7cef8379b7d" class="">En caso de error:</p><ul id="d483b26d-0d4c-4156-91de-2241f0e5f5a6" class="bulleted-list"><li style="list-style-type:disc">Código 500 &quot;Internal Server Error”<ul id="85c661a2-e9aa-4bff-a4ce-8d9111658f69" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud del cliente.</li></ul><ul id="721c1819-b3d9-47e3-8caa-316a902ee210" class="bulleted-list"><li style="list-style-type:circle">Mensaje: ‘Error de servidor’</li></ul></li></ul><p id="10af0c19-7463-4a5f-9bd5-97d5048e276c" class="">Si los datos fueron enviados: </p><ul id="06a74582-bee4-41b7-b432-3fcd674a6209" class="bulleted-list"><li style="list-style-type:disc">Código 201 &quot;Creado”<ul id="a5c749bd-f4fe-4d7e-a6ba-b560d727c2ea" class="bulleted-list"><li style="list-style-type:circle">Descripción: indica que la solicitud ha tenido éxito y que se ha creado un nuevo recurso como resultado de la misma.</li></ul><ul id="1b2ebc0c-f63e-493c-8121-069a78d2e79a" class="bulleted-list"><li style="list-style-type:circle">Mensajes: &#x27;Archivo insertado’, &#x27;Recurso creado correctamente’</li></ul></li></ul><p id="b69f4d79-9f8c-49ac-bb16-5b59d1db5c52" class="">Si no se encuentra la ruta:</p><ul id="3dacbbfa-c809-490a-9005-591080fbb4f1" class="bulleted-list"><li style="list-style-type:disc">Código 404 &quot;Not Found”<ul id="59f470b4-56a9-424c-a801-b4b87cca3456" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor no puede encontrar el recurso solicitado.</li></ul><ul id="307663fe-0daf-4522-943b-8a53e0646696" class="bulleted-list"><li style="list-style-type:circle">Mensaje: ‘Ruta no encontrada’</li></ul></li></ul><p id="fd870d3c-18ee-47e2-8f51-fd8a4f4974cb" class="">
+</p><h1 id="d55fff7a-0092-4002-acd5-5d451c8f919d" class="">MODIFICAR PRODUCTO</h1><p id="5eacc858-ad89-4beb-ab5d-fef4c4f486f1" class="">Método: PUT<br/>Actualiza un recurso completamente, y lo almacena en un archivo JSON, en ‘productos.json’.<br/></p><p id="ef921972-7212-4aa8-a26b-1064e58ee0be" class="">Ruta: localhost:3000/v1/productos{id}</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="07eb00cc-7918-4d49-9ac3-97b3d8437d13" class="code"><code class="language-JSON">// Antes de modificar 
+{
+    &quot;productos&quot;: [
+						{
+							&quot;id&quot;: 11,
+							&quot;nombre&quot;: &quot;Smartphone Galaxy A34&quot;,
+							&quot;marca&quot;: &quot;Samsung&quot;,
+							&quot;categoria&quot;: &quot;Smartphone&quot;,
+							&quot;stock&quot;: &quot;10&quot;
+						}
+			]
+}
+//Después de modificar
+{
+    &quot;productos&quot;: [
+						{
+							&quot;id&quot;: 11,
+							&quot;nombre&quot;: &quot;Smartphone Galaxy A54&quot;,
+							&quot;marca&quot;: &quot;Samsung&quot;,
+							&quot;categoria&quot;: &quot;Smartphone&quot;,
+							&quot;stock&quot;: &quot;5&quot;
+						}
+			]
+}</code></pre><p id="6cbf6f59-6da6-4d39-b62f-6f4039f47486" class="">
+</p><p id="948db18e-a57c-4af9-ab49-b2d765c012e2" class="">En caso de error:</p><ul id="849e21c1-1482-4637-b61b-f3cfbcdc68c0" class="bulleted-list"><li style="list-style-type:disc">Código 500 &quot;Internal Server Error”<ul id="ed850105-9bba-486a-ba0a-314c3785f9e5" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud del cliente.</li></ul><ul id="54941075-cd4a-4a12-b684-27652c41812e" class="bulleted-list"><li style="list-style-type:circle">Mensajes: &#x27;Error al recibir los datos en el servidor’, &#x27;Error al escribir en el archivo.’, &#x27;Error al escribir en el archivo.’</li></ul></li></ul><p id="5797b04a-0b9a-4354-a04e-2e3abc565dc3" class="">Si los datos fueron enviados: </p><ul id="5f61f0e1-df18-4d8e-ae85-1ec9a023f0c6" class="bulleted-list"><li style="list-style-type:disc">Código 200 &quot;OK”<ul id="3d04fa95-f644-4f40-baa6-378d0d64f684" class="bulleted-list"><li style="list-style-type:circle">Descripción: indica que la solicitud del cliente ha sido recibida, procesada y completada exitosamente por el servidor.</li></ul><ul id="ff1fcb05-4371-4a60-9e5d-698e181d5251" class="bulleted-list"><li style="list-style-type:circle">Mensajes: &#x27;Producto modificado con éxito.’</li></ul></li></ul><p id="3f6c0e21-ef85-4277-bd70-e814929aa6be" class="">Si no se encuentra la ruta:</p><ul id="44bcf8e2-df57-4ece-af33-771d7e48de00" class="bulleted-list"><li style="list-style-type:disc">Código 404 &quot;Not Found”<ul id="a5ecc281-4fa3-44bf-b1e1-10eb09beb2ba" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor no puede encontrar el recurso solicitado.</li></ul><ul id="2906480e-45a1-422c-8b46-7999559bc837" class="bulleted-list"><li style="list-style-type:circle">Mensajes: &#x27;Producto no encontrado.’, ‘Ruta no encontrada’</li></ul></li></ul><p id="67db1063-6d73-4837-b883-2b5c49a6c5b1" class="">
+</p><h1 id="aab6af3c-b616-4dca-a923-c9c7227fe150" class="">ELIMINAR PRODUCTO</h1><p id="f8cec6b7-2ae6-4088-a811-ad03aea0c051" class="">Método: DELETE<br/>Borra un recurso, y lo elimina del archivo JSON, en ‘productos.json’.<br/></p><p id="cfd9866c-9376-4e7c-9641-4e42b1044611" class="">Ruta: localhost:3000/v1/productos/{id}</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b569d341-5332-4ae1-b97a-912c42ab9320" class="code"><code class="language-JSON">{
+    &quot;productos&quot;: [
+						{
+							&quot;id&quot;: 11,
+							&quot;nombre&quot;: &quot;Smartphone Galaxy A54&quot;,
+							&quot;marca&quot;: &quot;Samsung&quot;,
+							&quot;categoria&quot;: &quot;Smartphone&quot;,
+							&quot;stock&quot;: &quot;5&quot;
+						}
+			]
+}</code></pre><p id="06a79979-21bc-4df8-8f4d-0ba4ea134714" class="">
+</p><p id="9b889362-6f03-4a8d-a5bb-d5225cbc1e0c" class="">En caso de error:</p><ul id="78f1c93a-9ea5-4d73-8329-dad73981f06f" class="bulleted-list"><li style="list-style-type:disc">Código 500 &quot;Internal Server Error”<ul id="2f3c999c-bdfe-4e29-9e97-0984ad00ba55" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud del cliente.</li></ul><ul id="f9f71247-1422-44e0-978d-d7e262a98e0d" class="bulleted-list"><li style="list-style-type:circle">Mensajes: &#x27;Error de servidor’</li></ul></li></ul><p id="dbc2f9db-2dd7-47f6-8550-45349d821b4e" class="">Si los datos fueron enviados: </p><ul id="8ea19f4a-3f15-478c-ae4e-e1806c2d43f0" class="bulleted-list"><li style="list-style-type:disc">Código 200 &quot;OK”<ul id="5fd090c0-fffa-45da-89f4-9431365f719e" class="bulleted-list"><li style="list-style-type:circle">Descripción: indica que la solicitud del cliente ha sido recibida, procesada y completada exitosamente por el servidor.</li></ul><ul id="9d0b8a2a-cd78-4669-9db8-4d0a0050add6" class="bulleted-list"><li style="list-style-type:circle">Mensajes: &#x27;Producto eliminado’</li></ul></li></ul><p id="027deaf2-0ec8-470a-a449-c83f64e743b8" class="">Si no se encuentra la ruta:</p><ul id="a366a28a-2089-4a9e-9c3f-833606d6ee11" class="bulleted-list"><li style="list-style-type:disc">Código 404 &quot;Not Found”<ul id="c1ad3b7b-6234-4141-979c-47c523c11b84" class="bulleted-list"><li style="list-style-type:circle">Descripción:  indica que el servidor no puede encontrar el recurso solicitado.</li></ul><ul id="9d4e03dd-4258-4fc3-a22b-9866053b068b" class="bulleted-list"><li style="list-style-type:circle">Mensajes: ‘Ruta no encontrada’</li></ul></li></ul><p id="26961dbb-0934-4cbe-b62c-c2a263a1407a" class="">
+</p><p id="60f0cad6-3765-4f5a-b8c2-88573ae29adf" class="">
+</p><h3 id="0562ec4d-15de-4167-b079-0fc29ffa48d9" class="">Hecho por: Federico Rodriguez</h3></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
